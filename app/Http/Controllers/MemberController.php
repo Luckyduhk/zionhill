@@ -37,19 +37,16 @@ class MemberController extends Controller
     {
         $validated = $request->validated();
 
-        if (is_null($validated['existing_family_id']) && is_null($validated['new_family_name'])) {
-            throw ValidationException::withMessages([
-                'existing_family_id' => trans('Family is required'),
-                'new_family_name' => trans('Family is required'),
-            ]);
-        } else if (!is_null($validated['existing_family_id'])) {
+        if (!is_null($validated['existing_family_id'])) {
             $validated['family_id'] = $validated['existing_family_id'];
-        } else {
+        } else if (!is_null($validated['new_family_name'])) {
             $family = Family::firstOrCreate(['name' => $validated['new_family_name']]);
             $validated['family_id'] = $family->id;
         }
 
-        $validated['picture'] = $request->file('picture')->store('uploads/members', 'public');
+        if (isset($validated['picture'])) {
+            $validated['picture'] = $request->file('picture')->store('uploads/members', 'public');
+        }
 
         Member::create($validated);
 
@@ -86,23 +83,17 @@ class MemberController extends Controller
     {
         $validated = $request->validated();
 
-        if (is_null($validated['existing_family_id']) && is_null($validated['new_family_name'])) {
-            throw ValidationException::withMessages([
-                'existing_family_id' => trans('Family is required'),
-                'new_family_name' => trans('Family is required'),
-            ]);
-        } else if (!is_null($validated['existing_family_id'])) {
+        if (!is_null($validated['existing_family_id'])) {
             $validated['family_id'] = $validated['existing_family_id'];
-        } else {
+        } else if (!is_null($validated['new_family_name'])) {
             $family = Family::firstOrCreate(['name' => $validated['new_family_name']]);
             $validated['family_id'] = $family->id;
         }
 
         if (isset($validated['picture'])) {
-            $oldPicture = $member->picture;
             $validated['picture'] = $request->file('picture')->store('uploads/members', 'public');
-            if (Storage::disk('public')->exists($oldPicture)) {
-                Storage::disk('public')->delete($oldPicture);
+            if (!is_null($member->picture) && Storage::disk('public')->exists($member->picture)) {
+                Storage::disk('public')->delete($member->picture);
             }
         }
 
@@ -120,7 +111,7 @@ class MemberController extends Controller
 
     public function destroy(Request $request, Member $member)
     {
-        if (Storage::disk('public')->exists($member->picture)) {
+        if (!is_null($member->picture) && Storage::disk('public')->exists($member->picture)) {
             Storage::disk('public')->delete($member->picture);
         }
         $member->delete();

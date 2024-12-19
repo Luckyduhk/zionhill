@@ -1,126 +1,48 @@
 <x-app-layout>
-  <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-    <div class="grid grid-cols-3 gap-4 mb-4">
-      <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
+  <div class="p-6 bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <!-- Dashboard Header -->
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">Family Member Dashboard</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Visits in 30, 60, 90 Days -->
+      <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
+        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Visits Overview</h2>
+        <div class="grid grid-cols-3 gap-4 mt-4">
+          <div class="text-center">
+            <span class="block text-2xl font-bold text-gray-800 dark:text-gray-200">30</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">Last 30 Days</span>
+          </div>
+          <div class="text-center">
+            <span class="block text-2xl font-bold text-gray-800 dark:text-gray-200">60</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">Last 60 Days</span>
+          </div>
+          <div class="text-center">
+            <span class="block text-2xl font-bold text-gray-800 dark:text-gray-200">90</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">Last 90 Days</span>
+          </div>
+        </div>
       </div>
-      <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
+
+      <!-- Total Family Members -->
+      <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
+        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Total Family Members</h2>
+        <div class="flex items-center justify-center h-32">
+          <span class="text-4xl font-bold text-gray-800 dark:text-gray-200">125</span>
+        </div>
       </div>
-      <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
-      </div>
-    </div>
-    <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-      <p class="text-2xl text-gray-400 dark:text-gray-500">
-        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-          viewBox="0 0 18 18">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M9 1v16M1 9h16"></path>
-        </svg>
-      </p>
-    </div>
-    <div class="grid grid-cols-2 gap-4 mb-4">
-      <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
-      </div>
-      <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
-      </div>
-      <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
-      </div>
-      <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
-      </div>
-    </div>
-    <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-      <p class="text-2xl text-gray-400 dark:text-gray-500">
-        <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-          viewBox="0 0 18 18">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M9 1v16M1 9h16"></path>
-        </svg>
-      </p>
-    </div>
-    <div class="grid grid-cols-2 gap-4">
-      <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
-      </div>
-      <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
-      </div>
-      <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
-      </div>
-      <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16"></path>
-          </svg>
-        </p>
+
+      <!-- Last 10 Family Members -->
+      <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
+        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Last 10 Visits</h2>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-center justify-between py-2 px-4 bg-gray-100 dark:bg-gray-700 rounded">
+            <span class="text-gray-800 dark:text-gray-200">John Doe</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">2 days ago</span>
+          </li>
+          <!-- Repeat similar list items for other members -->
+        </ul>
       </div>
     </div>
   </div>
+
 </x-app-layout>

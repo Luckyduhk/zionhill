@@ -20,33 +20,41 @@
             {{ $member->id }}
           </td>
           <td class="px-6 py-4">
-            <a href="{{ route('members.index', ['family_id' => $member->family->id]) }}"
-              class="text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">{{ $member->family->name }}</a>
+            @if (is_null($member?->family))
+              {{ __('N/R') }}
+            @else
+              <a href="{{ route('members.index', ['family_id' => $member->family->id]) }}"
+                class="text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">{{ $member->family->name }}</a>
+            @endif
           </td>
           <td class="px-6 py-4">
-            {{ $member->first_name ?? '' }}
-            {{ $member->last_name ?? '' }}
+            @if (is_null($member->first_name) && is_null($member->last_name))
+              {{ __('N/R') }}
+            @else
+              {{ $member->first_name ?? '' }}
+              {{ $member->last_name ?? '' }}
+            @endif
           </td>
           <td class="px-6 py-4">
-            {{ $member->email }}
+            {{ $member->email ?? __('N/R') }}
           </td>
           <td class="px-6 py-4">
-            {{ $member->phone }}
+            {{ $member->phone ?? __('N/R') }}
           </td>
           <td class="px-6 py-4">
-            {{ $member->clothing_size }}
+            {{ $member->clothing_size ?? __('N/R') }}
           </td>
           <td class="px-6 py-4">
-            {{ $member->last_visited_date }}
+            {{ $member->last_visited_date ?? __('N/R') }}
           </td>
           <td class="px-6 py-4">
-            {{ $member->updated_at->toDateTimeString() }}
+            {{ $member->updated_at?->toDateTimeString() ?? __('N/R') }}
           </td>
           <td class="px-6 py-4">
             <div class="flex flex-wrap items-center gap-1">
               <a href="{{ route('members.show', $member->id) }}">
                 <x-regular-button type="button" class="whitespace-nowrap" color="blue" size="extra-small">
-                  {{ __('Show') }}
+                  {{ __('View') }}
                 </x-regular-button>
               </a>
               <a href="{{ route('members.edit', $member->id) }}">

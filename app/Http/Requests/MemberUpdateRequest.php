@@ -25,16 +25,16 @@ class MemberUpdateRequest extends FormRequest
         return [
             'existing_family_id' => ['nullable', 'integer', 'exists:families,id'],
             'new_family_name' => ['nullable', 'string', 'max:255'],
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'address' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
-            'notes' => ['required', 'string', 'max:500'],
-            'prayer_requests' => ['required', 'string', 'max:500'],
-            'last_visited_date' => ['required', 'date', 'before_or_equal:today'],
-            'clothing_size' => ['required', 'string', 'in:' . implode(',', Member::CLOTHING_SIZES)],
-            'picture' => ['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:1024'],
+            'first_name' => ['nullable', 'string', 'max:255'],
+            'last_name' => ['nullable', 'string', 'max:255'],
+            'address' => ['nullable', 'string', 'max:255'],
+            'phone' => ['nullable', 'string', 'max:255'],
+            'email' => ['nullable', 'string', 'email', 'max:255'],
+            'notes' => ['nullable', 'string', 'max:500'],
+            'prayer_requests' => ['nullable', 'string', 'max:500'],
+            'last_visited_date' => ['nullable', 'date', 'before_or_equal:today'],
+            'clothing_size' => ['nullable', 'string', 'in:' . implode(',', Member::CLOTHING_SIZES)],
+            'picture' => ['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:' . 10 * 1024],
         ];
     }
 }
