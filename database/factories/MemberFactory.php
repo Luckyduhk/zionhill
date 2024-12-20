@@ -26,7 +26,7 @@ class MemberFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'notes' => fake()->text(),
             'prayer_requests' => fake()->text(),
-            'last_visited_date' => fake()->date(),
+            'last_visited_date' => fake()->dateTimeBetween('-4 months', 'now')->format('Y-m-d'),
             'clothing_size' => fake()->randomElement(['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL']),
             'picture' => fake()->imageUrl(),
         ];
