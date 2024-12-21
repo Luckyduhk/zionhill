@@ -96,7 +96,7 @@
         <x-input-label for="picture" :value="__('Picture')" />
         <x-file-input id="picture" name="picture" type="file" accept=".jpg, .jpeg, .png" @change="fileChosen" />
         <div class="mt-1 text-sm text-gray-500 dark:text-gray-300">
-          {{ __('The picture must be in JPG/PNG format (max 1 MB).') }}</div>
+          {{ __('The picture must be in JPG/PNG format (max 10 MB).') }}</div>
         <x-input-error :messages="$errors->get('picture')" />
         <img :src="imageUrl" class="rounded mt-2 w-16 object-cover" alt="member-picture">
       </div>
